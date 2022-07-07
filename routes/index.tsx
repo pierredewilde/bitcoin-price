@@ -2,7 +2,7 @@
 import { h } from "preact";
 import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import Refresh from "../islands/Refresh.tsx";
+// import Refresh from "../islands/Refresh.tsx";
 
 export interface Price {
   time: Time;
@@ -86,9 +86,9 @@ export default function Home({ data }: PageProps<Price | null>) {
         <p class={tw`my-5 text(center sm white)`}>
           Last update at {new Date(data.time.updated).toString()}
         </p>
-        <p class={tw`text(center sm white)`}>
+        {/* <p class={tw`text(center sm white)`}>
           <Refresh target={date.toISOString()}/>
-        </p>
+        </p> */}
       </div>
     </div>
   );
