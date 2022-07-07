@@ -73,6 +73,7 @@ export default function Home({ data }: PageProps<Price | null>) {
         <img
           src="/Bitcoin.svg"
           width="200px"
+          height="200px"
           class="mx-auto"
           alt="the fresh logo: a sliced lemon dripping with juice"
         />
