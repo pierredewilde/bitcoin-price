@@ -1,11 +1,7 @@
-# fresh project
+# Bitcoin Price
 
 ### Usage
 
-Start the project:
+Check [How To Build A Simple Web App Using Fresh Framework (Deno)](https://www.youtube.com/watch?v=Wk4Hhc4SQwM) video.
 
-```
-deno task start
-```
-
-This will watch the project directory and restart as necessary.
+Deployed at https://bitcoin-price.deno.dev/ using Deno Deploy.
