@@ -83,6 +83,9 @@ export default function Home({ data }: PageProps<Price | null>) {
         <p class={tw`my-10 text(center 2xl white)`}>
           EUR: € {data.bpi.EUR.rate}
         </p>
+        <p class={tw`my-10 text(center 2xl white)`}>
+          GBP: € {data.bpi.GBP.rate}
+        </p>
         <p class={tw`my-10 text(center sm white)`}>
           Last update at {new Date(data.time.updated).toString()}
         </p>
