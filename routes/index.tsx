@@ -77,16 +77,16 @@ export default function Home({ data }: PageProps<Price | null>) {
           alt="the fresh logo: a sliced lemon dripping with juice"
         />
         <p class={tw`my-10 text(center 3xl white)`}>Bitcoin Price</p>
-        <p class={tw`my-5 text(center 2xl white)`}>
+        <p class={tw`my-10 text(center 2xl white)`}>
           USD: $ {data.bpi.USD.rate}
         </p>
-        <p class={tw`my-5 text(center 2xl white)`}>
+        <p class={tw`my-10 text(center 2xl white)`}>
           EUR: € {data.bpi.EUR.rate}
         </p>
-        <p class={tw`my-5 text(center sm white)`}>
+        <p class={tw`my-10 text(center sm white)`}>
           Last update at {new Date(data.time.updated).toString()}
         </p>
-        {/* <p class={tw`text(center sm white)`}>
+        {/* <p class={tw`my-10 text(center sm white)`}>
           <Refresh target={date.toISOString()}/>
         </p> */}
       </div>
