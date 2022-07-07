@@ -84,7 +84,7 @@ export default function Home({ data }: PageProps<Price | null>) {
           EUR: € {data.bpi.EUR.rate}
         </p>
         <p class={tw`my-5 text(center sm white)`}>
-          Last refresh at {new Date(data.time.updated).toString()}
+          Last refresh at {new Date().toString()}
         </p>
         <p class={tw`text(center sm white)`}>
           <Refresh target={date.toISOString()}/>
