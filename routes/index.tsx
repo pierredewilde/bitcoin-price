@@ -2,6 +2,7 @@
 import { h } from "preact";
 import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
+import Refresh from "../islands/Refresh.tsx";
 
 export interface Price {
   time: Time;
@@ -64,6 +65,8 @@ export default function Home({ data }: PageProps<Price | null>) {
   if (!data) {
     return <h1>Bitcoin Price is not available</h1>;
   }
+  const date = new Date();
+  date.setMinutes(date.getMinutes() + 1);  
   return (
     <div class={tw`w-screen h-screen bg-gray-800`}>
       <div class={tw`p-8 mx-auto max-w-screen-md`}>
@@ -74,9 +77,18 @@ export default function Home({ data }: PageProps<Price | null>) {
           alt="the fresh logo: a sliced lemon dripping with juice"
         />
         <p class={tw`my-10 text(center 3xl white)`}>Bitcoin Price</p>
-        <p class={tw`my-10 text(center 2xl white)`}>USD: $ {data.bpi.USD.rate}</p>
-        <p class={tw`my-10 text(center 2xl white)`}>EUR: € {data.bpi.EUR.rate}</p>
-        <p class={tw`my-10 text(center sm white)`}>Last fetched at {data.time.updated}</p>
+        <p class={tw`my-5 text(center 2xl white)`}>
+          USD: $ {data.bpi.USD.rate}
+        </p>
+        <p class={tw`my-5 text(center 2xl white)`}>
+          EUR: € {data.bpi.EUR.rate}
+        </p>
+        <p class={tw`my-5 text(center sm white)`}>
+          Last refresh at {new Date(data.time.updated).toLocaleTimeString('fr-BE').slice(0,5)}
+        </p>
+        <p class={tw`text(center sm white)`}>
+          <Refresh target={date.toISOString()}/>
+        </p>
       </div>
     </div>
   );
